@@ -1,0 +1,238 @@
+{
+  "profiles": [
+    {
+      "personal": {
+        "fullName": "Omar Alexandro",
+        "birthDate": "26/03/1981",
+        "cpf": "215.936.068-69",
+        "phone": "(85) 98199-8417",
+        "email": "omar@oca.software"
+      },
+      "residential": {
+        "zipCode": "60821-140",
+        "address": "Rua Antônio Rocha",
+        "district": "Jardim das Oliveiras",
+        "city": "Fortaleza",
+        "state": "CE"
+      },
+      "professional": {
+        "profession": "Engenheiro de Software",
+        "company": "Verity",
+        "salary": "R$ 11.000,00"
+      },
+      "id": "EEVcHiyeanA"
+    },
+    {
+      "id": "q91zzhaL1YY",
+      "personal": {
+        "fullName": "Omar Wakim Alexandro",
+        "birthDate": "26/03/1981",
+        "cpf": "215.936.068-69",
+        "phone": "(85) 98199-8417",
+        "email": "omar@email.com.br"
+      },
+      "residential": {
+        "zipCode": "60821-140",
+        "address": "Rua Antônio Rocha",
+        "district": "Jardim das Oliveiras",
+        "city": "Fortaleza",
+        "state": "CE"
+      },
+      "professional": {
+        "profession": "Engenheiro de Software",
+        "company": "Verity",
+        "salary": "R$ 11.000,00"
+      }
+    },
+    {
+      "id": "8sCttJbvMX0",
+      "personal": {
+        "fullName": "Omar Wakim Alexandro",
+        "birthDate": "26/03/1981",
+        "cpf": "215.936.068-69",
+        "phone": "(85) 98199-8417",
+        "email": "omar.alexandro@gmail.com"
+      },
+      "residential": {
+        "zipCode": "61700-000",
+        "address": "Av. dos Oceanos, s/n",
+        "district": "Porto das Dunas",
+        "city": "Aquiraz",
+        "state": "CE"
+      },
+      "professional": {
+        "profession": "Engenheiro de Software",
+        "company": "Verity",
+        "salary": "R$ 11,11"
+      }
+    }
+  ],
+  "professions": [
+    {
+      "id": "1",
+      "name": "Engenheiro de Software"
+    },
+    {
+      "id": "2",
+      "name": "Médico"
+    },
+    {
+      "id": "3",
+      "name": "Advogado"
+    },
+    {
+      "id": "4",
+      "name": "Professor"
+    },
+    {
+      "id": "5",
+      "name": "Contador"
+    },
+    {
+      "id": "6",
+      "name": "Designer"
+    },
+    {
+      "id": "7",
+      "name": "Arquiteto"
+    }
+  ],
+  "states": [
+    {
+      "uf": "AC",
+      "name": "Acre",
+      "id": "1"
+    },
+    {
+      "uf": "AL",
+      "name": "Alagoas",
+      "id": "2"
+    },
+    {
+      "uf": "AP",
+      "name": "Amapá",
+      "id": "3"
+    },
+    {
+      "uf": "AM",
+      "name": "Amazonas",
+      "id": "4"
+    },
+    {
+      "uf": "BA",
+      "name": "Bahia",
+      "id": "5"
+    },
+    {
+      "uf": "CE",
+      "name": "Ceará",
+      "id": "6"
+    },
+    {
+      "uf": "DF",
+      "name": "Distrito Federal",
+      "id": "7"
+    },
+    {
+      "uf": "ES",
+      "name": "Espírito Santo",
+      "id": "8"
+    },
+    {
+      "uf": "GO",
+      "name": "Goiás",
+      "id": "9"
+    },
+    {
+      "uf": "MA",
+      "name": "Maranhão",
+      "id": "10"
+    },
+    {
+      "uf": "MT",
+      "name": "Mato Grosso",
+      "id": "11"
+    },
+    {
+      "uf": "MS",
+      "name": "Mato Grosso do Sul",
+      "id": "12"
+    },
+    {
+      "uf": "MG",
+      "name": "Minas Gerais",
+      "id": "13"
+    },
+    {
+      "uf": "PA",
+      "name": "Pará",
+      "id": "14"
+    },
+    {
+      "uf": "PB",
+      "name": "Paraíba",
+      "id": "15"
+    },
+    {
+      "uf": "PR",
+      "name": "Paraná",
+      "id": "16"
+    },
+    {
+      "uf": "PE",
+      "name": "Pernambuco",
+      "id": "17"
+    },
+    {
+      "uf": "PI",
+      "name": "Piauí",
+      "id": "18"
+    },
+    {
+      "uf": "RJ",
+      "name": "Rio de Janeiro",
+      "id": "19"
+    },
+    {
+      "uf": "RN",
+      "name": "Rio Grande do Norte",
+      "id": "20"
+    },
+    {
+      "uf": "RS",
+      "name": "Rio Grande do Sul",
+      "id": "21"
+    },
+    {
+      "uf": "RO",
+      "name": "Rondônia",
+      "id": "22"
+    },
+    {
+      "uf": "RR",
+      "name": "Roraima",
+      "id": "23"
+    },
+    {
+      "uf": "SC",
+      "name": "Santa Catarina",
+      "id": "24"
+    },
+    {
+      "uf": "SP",
+      "name": "São Paulo",
+      "id": "25"
+    },
+    {
+      "uf": "SE",
+      "name": "Sergipe",
+      "id": "26"
+    },
+    {
+      "uf": "TO",
+      "name": "Tocantins",
+      "id": "27"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

@@ -1,0 +1,29 @@
+<nav aria-label="Progresso do cadastro" class="mb-10">
+  <ol class="flex items-start">
+    @for (step of steps(); track step.route; let i = $index; let last = $last) {
+      <li class="flex flex-1 flex-col items-center gap-2">
+        <div class="flex w-full items-center">
+          <div [class]="leftConnectorClass(i)" aria-hidden="true"></div>
+          <button
+            type="button"
+            (click)="!isDisabled(i) && stepClick.emit(step.route)"
+            [disabled]="isDisabled(i)"
+            class="flex-shrink-0 bg-transparent border-0 p-0 disabled:cursor-not-allowed cursor-pointer"
+          >
+            <div [class]="circleClass(i)" [attr.aria-current]="i === currentStepIndex() ? 'step' : null">
+              @if (i < currentStepIndex()) {
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              } @else {
+                <span>{{ i + 1 }}</span>
+              }
+            </div>
+          </button>
+          <div [class]="rightConnectorClass(i, last)" aria-hidden="true"></div>
+        </div>
+        <span [class]="labelClass(i)">{{ step.label }}</span>
+      </li>
+    }
+  </ol>
+</nav>

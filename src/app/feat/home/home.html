@@ -1,0 +1,26 @@
+<div class="relative h-full overflow-hidden bg-gray-50">
+  <!-- Logo watermark -->
+  <img
+    src="/logo.png"
+    alt=""
+    aria-hidden="true"
+    class="pointer-events-none select-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] max-w-3xl opacity-10"
+  />
+
+  <!-- Foreground content -->
+  <div class="relative z-10 flex h-full flex-col items-center justify-around px-6 py-16 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold text-[var(--color-primary)]">Angular Challenge</h1>
+    <div class="flex flex-col items-center gap-6">
+      <p class="max-w-xl text-base text-[var(--color-gray-600)]">
+        Cadastre seu perfil em poucos passos.
+      </p>
+      <button
+        type="button"
+        (click)="start()"
+        class="px-8 py-3 rounded-3xl bg-[var(--color-primary)] text-white text-sm font-bold transition-colors duration-200 hover:bg-[var(--color-secondary)] cursor-pointer border-0"
+      >
+        Começar
+      </button>
+    </div>
+  </div>
+</div>

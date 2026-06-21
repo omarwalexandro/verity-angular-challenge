@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'tailwindcss';
+
+:root {
+  /* --- Primitive Colors --- */
+  --color-light: #fff;
+
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e5e5e5;
+  --color-gray-300: #d4d4d4;
+  --color-gray-400: #a3a3a3;
+  --color-gray-500: #737373;
+  --color-gray-600: #525252;
+  --color-gray-700: #404040;
+  --color-gray-800: #262626;
+  --color-gray-900: #171717;
+
+  --color-blue-500: #0041ff;
+  --color-blue-700: #1a1086;
+
+  --color-amber-500: #d97706;
+  --color-red-600: #dc2626;
+
+  /* Semantic Colors */
+  --color-primary: var(--color-blue-500);
+  --color-secondary: var(--color-blue-700);
+  --color-warn: var(--color-amber-500);
+  --color-error: var(--color-red-600);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: geometricPrecision;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+}

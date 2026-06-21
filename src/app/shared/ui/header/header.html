@@ -1,0 +1,23 @@
+<header class="flex items-center justify-between px-6 py-4 bg-white border-b border-gray-100 h-16 flex-shrink-0">
+  <!-- Logo -->
+  <div class="flex items-center gap-3 w-32">
+    <a routerLink="/home">
+      <img src="/logo.png" alt="Verity" class="h-8 w-auto" />
+    </a>
+  </div>
+
+  <!-- Nav -->
+  <nav class="flex items-center justify-center gap-6">
+    <a routerLink="/home" class="text-sm font-medium text-[var(--color-gray-600)] hover:text-[var(--color-primary)] transition-colors">Home</a>
+    <a routerLink="/profile/new" class="text-sm font-medium text-[var(--color-gray-600)] hover:text-[var(--color-primary)] transition-colors">Challenge</a>
+  </nav>
+
+  <!-- Avatar placeholder -->
+  <div class="flex items-center justify-end w-32">
+    <div class="h-10 w-10 rounded-full bg-gray-200 flex items-center justify-center">
+      <svg class="h-6 w-6 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+      </svg>
+    </div>
+  </div>
+</header>
