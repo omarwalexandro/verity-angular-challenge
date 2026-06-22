@@ -12,20 +12,20 @@ const mockProfile: ProfileModel = {
     fullName: 'João Silva',
     birthDate: '01/01/1990',
     cpf: '123.456.789-00',
-    phone: '(85) 99999-9999',
+    phone: '(99) 99999-9999',
     email: 'joao@example.com',
   },
   residential: {
-    zipCode: '60000-000',
-    address: 'Rua das Flores',
-    district: 'Centro',
-    city: 'Fortaleza',
+    zipCode: '99999-999',
+    address: 'Rua Teste',
+    district: 'Bairro Teste',
+    city: 'Cidade Teste',
     state: 'CE',
   },
   professional: {
     profession: 'Engenheiro',
     company: 'Tech Corp',
-    salary: 'R$ 5.000,00',
+    salary: 'R$ 9.999,99',
   },
 };
 

@@ -108,13 +108,13 @@ describe('MaskDirective', () => {
     });
 
     it('applies landline format for 10 digits', () => {
-      fireInput(input, '8540163243');
-      expect(input.value).toBe('(85) 4016-3243');
+      fireInput(input, '9999999999');
+      expect(input.value).toBe('(99) 9999-9999');
     });
 
     it('applies mobile format for 11 digits', () => {
-      fireInput(input, '85981998417');
-      expect(input.value).toBe('(85) 98199-8417');
+      fireInput(input, '99999999999');
+      expect(input.value).toBe('(99) 99999-9999');
     });
 
     it('returns empty for empty input', () => {
@@ -123,8 +123,8 @@ describe('MaskDirective', () => {
     });
 
     it('handles partial phone (fewer than 10 digits)', () => {
-      fireInput(input, '85');
-      expect(input.value).toContain('85');
+      fireInput(input, '99');
+      expect(input.value).toContain('99');
     });
   });
 

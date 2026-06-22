@@ -14,16 +14,16 @@ const FULL_PROFILE = {
     email: 'joao@example.com',
   },
   residential: {
-    zipCode: '60000-000',
-    address: 'Rua das Flores',
-    district: 'Centro',
-    city: 'Fortaleza',
-    state: 'CE',
+    zipCode: '99999-999',
+    address: 'Rua Teste',
+    district: 'Bairro Teste',
+    city: 'Cidade Teste',
+    state: 'SP',
   },
   professional: {
     profession: 'Engenheiro',
     company: 'Tech Corp',
-    salary: 'R$ 10.000,00',
+    salary: 'R$ 9.999,99',
   },
 };
 
@@ -73,11 +73,11 @@ describe('Review', () => {
   });
 
   it('displays the CEP', () => {
-    expect(fixture.nativeElement.textContent).toContain('60000-000');
+    expect(fixture.nativeElement.textContent).toContain('99999-999');
   });
 
   it('displays the city', () => {
-    expect(fixture.nativeElement.textContent).toContain('Fortaleza');
+    expect(fixture.nativeElement.textContent).toContain('Cidade Teste');
   });
 
   it('displays the profession', () => {
@@ -85,7 +85,7 @@ describe('Review', () => {
   });
 
   it('displays the salary', () => {
-    expect(fixture.nativeElement.textContent).toContain('R$ 10.000,00');
+    expect(fixture.nativeElement.textContent).toContain('R$ 9.999,99');
   });
 
   it('renders the Exportar PDF button', () => {
@@ -104,7 +104,7 @@ describe('Review', () => {
   it('profile computed signal returns full profile data', () => {
     const profile = component.profile();
     expect(profile.personal.fullName).toBe('João Silva');
-    expect(profile.residential.city).toBe('Fortaleza');
-    expect(profile.professional.salary).toBe('R$ 10.000,00');
+    expect(profile.residential.city).toBe('Cidade Teste');
+    expect(profile.professional.salary).toBe('R$ 9.999,99');
   });
 });

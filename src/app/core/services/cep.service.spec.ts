@@ -26,15 +26,15 @@ describe('CepService', () => {
 
   it('makes a GET request to ViaCEP with the clean CEP', async () => {
     const mockResponse: CepModel = {
-      cep: '60000-000',
-      logradouro: 'Rua das Flores',
+      cep: '99999-999',
+      logradouro: 'Rua Teste',
       complemento: '',
-      bairro: 'Centro',
-      localidade: 'Fortaleza',
-      uf: 'CE',
+      bairro: 'Bairro Teste',
+      localidade: 'Cidade Teste',
+      uf: 'SP',
     };
 
-    const cepSignal = signal('60000-000');
+    const cepSignal = signal('99999-999');
     let resource!: HttpResourceRef<CepModel | undefined>;
     TestBed.runInInjectionContext(() => {
       resource = service.getCep(cepSignal);
@@ -42,7 +42,7 @@ describe('CepService', () => {
 
     TestBed.flushEffects();
 
-    const req = httpMock.expectOne('https://viacep.com.br/ws/60000000/json');
+    const req = httpMock.expectOne('https://viacep.com.br/ws/99999999/json');
     expect(req.request.method).toBe('GET');
     req.flush(mockResponse);
 
@@ -50,20 +50,20 @@ describe('CepService', () => {
     await Promise.resolve();
     TestBed.flushEffects();
 
-    expect(resource.value()?.logradouro).toBe('Rua das Flores');
-    expect(resource.value()?.uf).toBe('CE');
+    expect(resource.value()?.logradouro).toBe('Rua Teste');
+    expect(resource.value()?.uf).toBe('SP');
   });
 
   it('strips non-numeric characters from CEP before requesting', () => {
-    const cepSignal = signal('60.000-000');
+    const cepSignal = signal('99.999-999');
     TestBed.runInInjectionContext(() => {
       service.getCep(cepSignal);
     });
 
     TestBed.flushEffects();
 
-    const req = httpMock.expectOne('https://viacep.com.br/ws/60000000/json');
-    expect(req.request.url).toContain('60000000');
+    const req = httpMock.expectOne('https://viacep.com.br/ws/99999999/json');
+    expect(req.request.url).toContain('99999999');
     req.flush({});
   });
 

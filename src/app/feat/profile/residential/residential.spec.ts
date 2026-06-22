@@ -74,19 +74,19 @@ describe('Residential', () => {
   it('onBlur saves current model to the store', () => {
     const store = TestBed.inject(ProfileStore);
     component.residentialModel.set({
-      zipCode: '60000-000',
-      address: 'Rua das Flores',
-      district: 'Centro',
-      city: 'Fortaleza',
-      state: 'CE',
+      zipCode: '99999-999',
+      address: 'Rua Teste',
+      district: 'Bairro Teste',
+      city: 'Cidade Teste',
+      state: 'SP',
     });
     (component as any).onBlur();
-    expect(store.residential().city).toBe('Fortaleza');
+    expect(store.residential().city).toBe('Cidade Teste');
   });
 
   it('auto-fills address fields on valid CEP lookup', async () => {
     component.residentialModel.set({
-      zipCode: '60000-000',
+      zipCode: '99999-999',
       address: '',
       district: '',
       city: '',
@@ -97,28 +97,28 @@ describe('Residential', () => {
     // Flush the httpResource effect so the CEP HTTP request is scheduled
     TestBed.flushEffects();
 
-    const req = httpMock.expectOne('https://viacep.com.br/ws/60000000/json');
+    const req = httpMock.expectOne('https://viacep.com.br/ws/99999999/json');
     req.flush({
-      cep: '60000-000',
-      logradouro: 'Rua das Flores',
+      cep: '99999-999',
+      logradouro: 'Rua Teste',
       complemento: '',
-      bairro: 'Centro',
-      localidade: 'Fortaleza',
-      uf: 'CE',
+      bairro: 'Bairro Teste',
+      localidade: 'Cidade Teste',
+      uf: 'SP',
     });
 
     // Wait for httpResource's internal Promise to resolve, then flush the model-update effect
     await fixture.whenStable();
     TestBed.flushEffects();
 
-    expect(component.residentialModel().address).toBe('Rua das Flores');
-    expect(component.residentialModel().city).toBe('Fortaleza');
-    expect(component.residentialModel().state).toBe('CE');
+    expect(component.residentialModel().address).toBe('Rua Teste');
+    expect(component.residentialModel().city).toBe('Cidade Teste');
+    expect(component.residentialModel().state).toBe('SP');
   });
 
   it('does not overwrite user edits when residentialModel changes after CEP autofill', async () => {
     component.residentialModel.set({
-      zipCode: '60000-000',
+      zipCode: '99999-999',
       address: '',
       district: '',
       city: '',
@@ -127,14 +127,14 @@ describe('Residential', () => {
     (component as any).onCepBlur();
     TestBed.flushEffects();
 
-    const req = httpMock.expectOne('https://viacep.com.br/ws/60000000/json');
+    const req = httpMock.expectOne('https://viacep.com.br/ws/99999999/json');
     req.flush({
-      cep: '60000-000',
-      logradouro: 'Rua das Flores',
+      cep: '99999-999',
+      logradouro: 'Rua Teste',
       complemento: '',
-      bairro: 'Centro',
-      localidade: 'Fortaleza',
-      uf: 'CE',
+      bairro: 'Bairro Teste',
+      localidade: 'Cidade Teste',
+      uf: 'SP',
     });
 
     await fixture.whenStable();
@@ -148,7 +148,7 @@ describe('Residential', () => {
 
   it('does not call CEP API when zipCode length is less than 9', () => {
     component.residentialModel.set({
-      zipCode: '600',
+      zipCode: '999',
       address: '',
       district: '',
       city: '',
@@ -156,7 +156,7 @@ describe('Residential', () => {
     });
     (component as any).onCepBlur();
     TestBed.flushEffects();
-    httpMock.expectNone('https://viacep.com.br/ws/600/json');
+    httpMock.expectNone('https://viacep.com.br/ws/999/json');
   });
 });
 

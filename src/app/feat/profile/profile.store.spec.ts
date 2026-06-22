@@ -12,17 +12,17 @@ const mockPersonal: PersonalModel = {
 };
 
 const mockResidential: ResidentialModel = {
-  zipCode: '60000-000',
-  address: 'Rua das Flores',
-  district: 'Centro',
-  city: 'Fortaleza',
-  state: 'CE',
+  zipCode: '99999-999',
+  address: 'Rua Teste',
+  district: 'Bairro Teste',
+  city: 'Cidade Teste',
+  state: 'SP',
 };
 
 const mockProfessional: ProfessionalModel = {
   profession: 'Engenheiro',
   company: 'Tech Corp',
-  salary: 'R$ 5.000,00',
+  salary: 'R$ 9.999,99',
 };
 
 describe('ProfileStore', () => {
@@ -55,8 +55,8 @@ describe('ProfileStore', () => {
   describe('updateResidential', () => {
     it('updates residential data in the store', () => {
       store.updateResidential(mockResidential);
-      expect(store.residential().zipCode).toBe('60000-000');
-      expect(store.residential().city).toBe('Fortaleza');
+      expect(store.residential().zipCode).toBe('99999-999');
+      expect(store.residential().city).toBe('Cidade Teste');
     });
   });
 
@@ -64,7 +64,7 @@ describe('ProfileStore', () => {
     it('updates professional data in the store', () => {
       store.updateProfessional(mockProfessional);
       expect(store.professional().profession).toBe('Engenheiro');
-      expect(store.professional().salary).toBe('R$ 5.000,00');
+      expect(store.professional().salary).toBe('R$ 9.999,99');
     });
   });
 
@@ -85,7 +85,7 @@ describe('ProfileStore', () => {
       });
       expect(store.id()).toBe('xyz');
       expect(store.personal().fullName).toBe('João Silva');
-      expect(store.residential().city).toBe('Fortaleza');
+      expect(store.residential().city).toBe('Cidade Teste');
       expect(store.professional().company).toBe('Tech Corp');
     });
   });
@@ -100,8 +100,8 @@ describe('ProfileStore', () => {
       const model = store.profileModel();
       expect(model.id).toBe('test-id');
       expect(model.personal.fullName).toBe('João Silva');
-      expect(model.residential.city).toBe('Fortaleza');
-      expect(model.professional.salary).toBe('R$ 5.000,00');
+      expect(model.residential.city).toBe('Cidade Teste');
+      expect(model.professional.salary).toBe('R$ 9.999,99');
     });
   });
 
